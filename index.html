@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jquery 前端组件库</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="css/fonts/iconfont.css" rel="stylesheet" type="text/css" />
+  <!-- 表格插件 -->
+  <link href="../component/handsontable/handsontable.css" rel="stylesheet" type="text/css" />
+  <!-- 左右移动选择+模糊搜索 -->
+  <link href="../component/switchselect/switchselect.css" rel="stylesheet" type="text/css" />
+  <link href="css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <h1>jquery 前端组件库</h1>
+      <p class="lead">
+        注意：所有插件都依赖 jQuery （也就是说，jQuery必须在所有插件之前引入页面）
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="menu-left-sidebar hidden-xs hidden-sm">
+          <ul class="menu-left-sidebar-nav">
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="component-section" id="handsontable">
+          <h2>表格渲染</h2>
+          <p>此组件，是在Handsontable组件的基础上，进行的二次封装，API使用更加方便易懂。此组件具有原Handsontable的全部API</p>
+          <div class="component-section-example">
+            <div class="handsontable"></div>
+          </div>
+          <div class="component-section-code">
+            <pre class="code code-html">
+              <label>HTML</label>
+              <code>
+                &lt;div class="handsontable"&gt;&lt;/div&gt;
+              </code>
+            </pre>
+            <!-- <pre class="code code-css">
+              <label>CSS</label>
+              <code></code>
+            </pre> -->
+            <pre class="code code-js">
+              <label>JS</label>
+              <code>
+                  var data = [
+                    {
+                      "id": "ID",
+                      "name": "名称",
+                      "cluster": "集群",
+                      "isactive": "是否激活",
+                      "realtimes": "任务类型",
+                      "dayweek": "任务周期",
+                      "note": "备注",
+                      "create_name": "创建人",
+                      "create_time": "创建时间",
+                      "operation": "操作"
+                    },
+                    {
+                      "id": "196",
+                      "name": "121212",
+                      "cluster": "sys-shbt",
+                      "isactive": "激活",
+                      "realtimes": "离线",
+                      "dayweek": "天",
+                      "note": "1212",
+                      "create_name": "高飞龙",
+                      "create_time": "2017-08-15 11:52:09",
+                      "operation": "&lt;a href='www.baidu.com'&gt;aaa&lt;/a&gt;"
+                    },
+                  ];
+                  $('.handsontable').handsontable({
+                    data: data,
+                    colDisabledArray: [0,9],
+                    colHtmlArray: [9]
+                  });
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div class="component-section" id="switchselect">
+          <h2>左右移动选择+模糊搜索</h2>
+          <p>左侧搜索使用的是请求接口搜索，右侧搜索使用的是本地前端搜索。如果基础样式无法以满足需求，可以自定义样式，将基础样式覆盖。</p>
+          <div class="component-section-example">
+            <div class="switchselect1"></div>
+          </div>
+          <div class="component-section-code">
+            <pre class="code code-html">
+              <label>HTML</label>
+              <code>
+                &lt;div class="switchselect"&gt;&lt;/div&gt;
+              </code>
+            </pre>
+            <!-- <pre class="code code-css">
+              <label>CSS</label>
+              <code></code>
+            </pre> -->
+            <pre class="code code-js">
+              <label>JS</label>
+              <code>
+                var dataL = [];
+                var dataR = [];
+                for(var i = 0; i < 10; i ++){
+                  var objTemp = {
+                    name: 'nameL' + i,
+                    id: i,                  
+                  };
+                  dataL.push(objTemp);
+                }
+                for(var k = 0; k < 5; k ++){
+                  var objTemp1 = {
+                    name: 'nameR' + (k+10),
+                    id: k+10
+                  };
+                  dataR.push(objTemp1);
+                }
+                $('.switchselect1').switchselect({
+                  dataL: dataL,
+                  dataR: dataR,
+                  searchUrl: '/aaa'
+                });
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <!-- 渲染表格开始 -->
+  <script src="../component/handsontable/handsontable.js"></script>
+  <!-- 渲染表格结束 -->
+  <!-- 左右移动选择+模糊搜索开始 -->
+  <script src="../component/switchselect/switchselect.js"></script>
+  <!-- 左右移动选择+模糊搜索结束 -->
+  <script src="js/index.js"></script>
+</body>
+</html>
